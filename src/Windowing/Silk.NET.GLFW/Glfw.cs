@@ -3602,6 +3602,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="SetClipboardString" />
+        [return: UnmanagedType(UnmanagedType.LPUTF8Str)]
         public unsafe partial string GetClipboardString(WindowHandle* window);
 
         /// <summary>
@@ -3623,7 +3624,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="GetClipboardString" />
-        public unsafe partial void SetClipboardString(WindowHandle* window, string data);
+        public unsafe partial void SetClipboardString(WindowHandle* window, [UnmanagedType(UnmanagedType.LPUTF8Str)] string data);
 
         /// <summary>
         /// Returns whether the Vulkan loader and an ICD have been found.

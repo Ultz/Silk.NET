@@ -558,7 +558,7 @@ namespace Silk.NET.SilkTouch
                 )
                 .ToArray();
 
-            ReturnMarshalOptions = GetOptions(methodSymbol.ReturnType.GetAttributes());
+            ReturnMarshalOptions = GetOptions(methodSymbol.GetReturnTypeAttributes());
         }
     }
 }
