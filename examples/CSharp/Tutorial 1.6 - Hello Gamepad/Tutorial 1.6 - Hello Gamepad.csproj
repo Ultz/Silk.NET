@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Tutorial_1._6___Hello_Gamepad</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Core\Silk.NET.Core\Silk.NET.Core.csproj" />
+    <ProjectReference Include="..\..\..\src\Core\Silk.NET\Silk.NET.csproj" />
+    <ProjectReference Include="..\..\..\src\Input\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj" />
+    <ProjectReference Include="..\..\..\src\Maths\Silk.NET.Maths\Silk.NET.Maths.csproj" />
+    <ProjectReference Include="..\..\..\src\Windowing\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj" />
+  </ItemGroup>
+
+</Project>

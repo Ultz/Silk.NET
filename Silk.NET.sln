@@ -18,9 +18,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Windowing.Common", "src\Windowing\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj", "{956F722C-DFD3-435E-9D2E-A0549C4D8BC0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{E1F91563-7277-4E9B-A3B7-8D5FD9802A4A}"
-ProjectSection(SolutionItems) = preProject
-	examples\Directory.Build.props = examples\Directory.Build.props
-EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		examples\Directory.Build.props = examples\Directory.Build.props
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenAL", "OpenAL", "{081E7761-B200-4DBF-8950-941464DECACE}"
 EndProject
@@ -42,9 +42,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build Properties", "Build P
 		build\props\common.props = build\props\common.props
 		build\props\common.targets = build\props\common.targets
 		build\csharp_typemap.json = build\csharp_typemap.json
+		build\dx_typemap.json = build\dx_typemap.json
 		generator.json = generator.json
 		build\gl_typemap.json = build\gl_typemap.json
-					build\dx_typemap.json = build\dx_typemap.json
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Input.Common", "src\Input\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj", "{8FFF49D6-B029-400B-8510-1A088868DFA6}"
@@ -331,48 +331,50 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.NUKE", "build\nuke
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microsoft", "Microsoft", "{F2CF5D32-4B41-425E-B229-8FFC48F88063}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Direct3D11", "src\Microsoft\Silk.NET.Direct3D11\Silk.NET.Direct3D11.csproj", "{F3B7A9D6-5B15-45E8-925B-20B5BBD33428}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Direct3D11", "src\Microsoft\Silk.NET.Direct3D11\Silk.NET.Direct3D11.csproj", "{F3B7A9D6-5B15-45E8-925B-20B5BBD33428}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.DXGI", "src\Microsoft\Silk.NET.DXGI\Silk.NET.DXGI.csproj", "{A768A346-6388-4881-8FF6-15F0163B76E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.DXGI", "src\Microsoft\Silk.NET.DXGI\Silk.NET.DXGI.csproj", "{A768A346-6388-4881-8FF6-15F0163B76E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Direct3D12", "src\Microsoft\Silk.NET.Direct3D12\Silk.NET.Direct3D12.csproj", "{2C3099EA-C01C-4639-8300-153A9BD79292}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Direct3D12", "src\Microsoft\Silk.NET.Direct3D12\Silk.NET.Direct3D12.csproj", "{2C3099EA-C01C-4639-8300-153A9BD79292}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Direct3D9", "src\Microsoft\Silk.NET.Direct3D9\Silk.NET.Direct3D9.csproj", "{FFD95BCB-5209-48CC-8C2B-33189CCA0A6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Direct3D9", "src\Microsoft\Silk.NET.Direct3D9\Silk.NET.Direct3D9.csproj", "{FFD95BCB-5209-48CC-8C2B-33189CCA0A6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Direct3D.Compilers", "src\Microsoft\Silk.NET.Direct3D.Compilers\Silk.NET.Direct3D.Compilers.csproj", "{07DD7965-849F-4311-9DAD-07C1CCF8BEA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Direct3D.Compilers", "src\Microsoft\Silk.NET.Direct3D.Compilers\Silk.NET.Direct3D.Compilers.csproj", "{07DD7965-849F-4311-9DAD-07C1CCF8BEA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.XAudio", "src\Microsoft\Silk.NET.XAudio\Silk.NET.XAudio.csproj", "{4712BFE1-67DA-407F-8BDC-FAF529E5BF94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.XAudio", "src\Microsoft\Silk.NET.XAudio\Silk.NET.XAudio.csproj", "{4712BFE1-67DA-407F-8BDC-FAF529E5BF94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.XInput", "src\Microsoft\Silk.NET.XInput\Silk.NET.XInput.csproj", "{E8DE9BA0-8391-4278-926D-DD931C4172AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.XInput", "src\Microsoft\Silk.NET.XInput\Silk.NET.XInput.csproj", "{E8DE9BA0-8391-4278-926D-DD931C4172AF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Maths", "Maths", "{41EEBDB3-75C4-4A60-B4D5-673FBCA791E7}"
-ProjectSection(SolutionItems) = preProject
-	src\Maths\.editorconfig = src\Maths\.editorconfig
-EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		src\Maths\.editorconfig = src\Maths\.editorconfig
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Maths", "src\Maths\Silk.NET.Maths\Silk.NET.Maths.csproj", "{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Maths", "src\Maths\Silk.NET.Maths\Silk.NET.Maths.csproj", "{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Maths.Benchmarks", "src\Maths\Silk.NET.Maths.Benchmarks\Silk.NET.Maths.Benchmarks.csproj", "{07915304-3B6B-400C-94F8-C49EF5F347E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Maths.Benchmarks", "src\Maths\Silk.NET.Maths.Benchmarks\Silk.NET.Maths.Benchmarks.csproj", "{07915304-3B6B-400C-94F8-C49EF5F347E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Maths.Tests", "src\Maths\Silk.NET.Maths.Tests\Silk.NET.Maths.Tests.csproj", "{8C7A30EF-C257-421C-AABD-D42FF6D955A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Maths.Tests", "src\Maths\Silk.NET.Maths.Tests\Silk.NET.Maths.Tests.csproj", "{8C7A30EF-C257-421C-AABD-D42FF6D955A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utf8Test", "src\Lab\Utf8Test\Utf8Test.csproj", "{C06556DC-52AF-44AE-99B8-1251C18C3973}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utf8Test", "src\Lab\Utf8Test\Utf8Test.csproj", "{C06556DC-52AF-44AE-99B8-1251C18C3973}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Windowing.Extensions.Veldrid", "src\Windowing\Extensions\Silk.NET.Windowing.Extensions.Veldrid\Silk.NET.Windowing.Extensions.Veldrid.csproj", "{DE477265-8F7D-4D7F-B5DA-F3C5DE631788}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Windowing.Extensions.Veldrid", "src\Windowing\Extensions\Silk.NET.Windowing.Extensions.Veldrid\Silk.NET.Windowing.Extensions.Veldrid.csproj", "{DE477265-8F7D-4D7F-B5DA-F3C5DE631788}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeldridTriangle", "src\Lab\VeldridTriangle\VeldridTriangle.csproj", "{FD88C431-C25B-45B0-ACB1-E66FD62DD755}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeldridTriangle", "src\Lab\VeldridTriangle\VeldridTriangle.csproj", "{FD88C431-C25B-45B0-ACB1-E66FD62DD755}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D3D12Triangle", "src\Lab\D3D12Triangle\D3D12Triangle.csproj", "{760BE7AD-0683-451A-B28A-975A76404662}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D3D12Triangle", "src\Lab\D3D12Triangle\D3D12Triangle.csproj", "{760BE7AD-0683-451A-B28A-975A76404662}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Native", "Native", "{72E7FA64-5B1E-477D-BD30-63B7F206B3C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.SDL.Native", "src\Native\Silk.NET.SDL.Native\Silk.NET.SDL.Native.csproj", "{F9AA41B4-1C36-472B-A1A5-4A10EE0A79FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.SDL.Native", "src\Native\Silk.NET.SDL.Native\Silk.NET.SDL.Native.csproj", "{F9AA41B4-1C36-472B-A1A5-4A10EE0A79FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.GLFW.Native", "src\Native\Silk.NET.GLFW.Native\Silk.NET.GLFW.Native.csproj", "{84F51960-D814-450D-80EB-D9E46A1D5187}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.GLFW.Native", "src\Native\Silk.NET.GLFW.Native\Silk.NET.GLFW.Native.csproj", "{84F51960-D814-450D-80EB-D9E46A1D5187}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Assimp.Native", "src\Native\Silk.NET.Assimp.Native\Silk.NET.Assimp.Native.csproj", "{D3D9891B-88E6-46AD-919C-7EC4EABE5266}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Assimp.Native", "src\Native\Silk.NET.Assimp.Native\Silk.NET.Assimp.Native.csproj", "{D3D9891B-88E6-46AD-919C-7EC4EABE5266}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Extensions.ImGui", "src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.ImGui\Silk.NET.OpenGL.Extensions.ImGui.csproj", "{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Extensions.ImGui", "src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.ImGui\Silk.NET.OpenGL.Extensions.ImGui.csproj", "{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial 1.6 - Hello Gamepad", "examples\CSharp\Tutorial 1.6 - Hello Gamepad\Tutorial 1.6 - Hello Gamepad.csproj", "{982397D0-7DA2-459F-B4F2-C0F4F64AADF4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -2022,42 +2024,6 @@ Global
 		{B9A8D738-FE7D-4860-A446-4A03E3DDEB74}.Release|x64.Build.0 = Release|Any CPU
 		{B9A8D738-FE7D-4860-A446-4A03E3DDEB74}.Release|x86.ActiveCfg = Release|Any CPU
 		{B9A8D738-FE7D-4860-A446-4A03E3DDEB74}.Release|x86.Build.0 = Release|Any CPU
-		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Debug|x64.Build.0 = Debug|Any CPU
-		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Debug|x86.Build.0 = Debug|Any CPU
-		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Release|x64.ActiveCfg = Release|Any CPU
-		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Release|x64.Build.0 = Release|Any CPU
-		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Release|x86.ActiveCfg = Release|Any CPU
-		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Release|x86.Build.0 = Release|Any CPU
-		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Debug|x64.Build.0 = Debug|Any CPU
-		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Debug|x86.Build.0 = Debug|Any CPU
-		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Release|x64.ActiveCfg = Release|Any CPU
-		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Release|x64.Build.0 = Release|Any CPU
-		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Release|x86.ActiveCfg = Release|Any CPU
-		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Release|x86.Build.0 = Release|Any CPU
-		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Debug|x64.Build.0 = Debug|Any CPU
-		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Debug|x86.Build.0 = Debug|Any CPU
-		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Release|x64.ActiveCfg = Release|Any CPU
-		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Release|x64.Build.0 = Release|Any CPU
-		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Release|x86.ActiveCfg = Release|Any CPU
-		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Release|x86.Build.0 = Release|Any CPU
 		{F3B7A9D6-5B15-45E8-925B-20B5BBD33428}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F3B7A9D6-5B15-45E8-925B-20B5BBD33428}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3B7A9D6-5B15-45E8-925B-20B5BBD33428}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -2142,6 +2108,42 @@ Global
 		{E8DE9BA0-8391-4278-926D-DD931C4172AF}.Release|x64.Build.0 = Release|Any CPU
 		{E8DE9BA0-8391-4278-926D-DD931C4172AF}.Release|x86.ActiveCfg = Release|Any CPU
 		{E8DE9BA0-8391-4278-926D-DD931C4172AF}.Release|x86.Build.0 = Release|Any CPU
+		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Debug|x64.Build.0 = Debug|Any CPU
+		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Debug|x86.Build.0 = Debug|Any CPU
+		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Release|x64.ActiveCfg = Release|Any CPU
+		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Release|x64.Build.0 = Release|Any CPU
+		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Release|x86.ActiveCfg = Release|Any CPU
+		{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}.Release|x86.Build.0 = Release|Any CPU
+		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Debug|x64.Build.0 = Debug|Any CPU
+		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Debug|x86.Build.0 = Debug|Any CPU
+		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Release|x64.ActiveCfg = Release|Any CPU
+		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Release|x64.Build.0 = Release|Any CPU
+		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Release|x86.ActiveCfg = Release|Any CPU
+		{07915304-3B6B-400C-94F8-C49EF5F347E7}.Release|x86.Build.0 = Release|Any CPU
+		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Debug|x64.Build.0 = Debug|Any CPU
+		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Debug|x86.Build.0 = Debug|Any CPU
+		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Release|x64.ActiveCfg = Release|Any CPU
+		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Release|x64.Build.0 = Release|Any CPU
+		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Release|x86.ActiveCfg = Release|Any CPU
+		{8C7A30EF-C257-421C-AABD-D42FF6D955A5}.Release|x86.Build.0 = Release|Any CPU
 		{C06556DC-52AF-44AE-99B8-1251C18C3973}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C06556DC-52AF-44AE-99B8-1251C18C3973}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C06556DC-52AF-44AE-99B8-1251C18C3973}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -2238,6 +2240,18 @@ Global
 		{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85}.Release|x64.Build.0 = Release|Any CPU
 		{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85}.Release|x86.ActiveCfg = Release|Any CPU
 		{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85}.Release|x86.Build.0 = Release|Any CPU
+		{982397D0-7DA2-459F-B4F2-C0F4F64AADF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{982397D0-7DA2-459F-B4F2-C0F4F64AADF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{982397D0-7DA2-459F-B4F2-C0F4F64AADF4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{982397D0-7DA2-459F-B4F2-C0F4F64AADF4}.Debug|x64.Build.0 = Debug|Any CPU
+		{982397D0-7DA2-459F-B4F2-C0F4F64AADF4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{982397D0-7DA2-459F-B4F2-C0F4F64AADF4}.Debug|x86.Build.0 = Debug|Any CPU
+		{982397D0-7DA2-459F-B4F2-C0F4F64AADF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{982397D0-7DA2-459F-B4F2-C0F4F64AADF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{982397D0-7DA2-459F-B4F2-C0F4F64AADF4}.Release|x64.ActiveCfg = Release|Any CPU
+		{982397D0-7DA2-459F-B4F2-C0F4F64AADF4}.Release|x64.Build.0 = Release|Any CPU
+		{982397D0-7DA2-459F-B4F2-C0F4F64AADF4}.Release|x86.ActiveCfg = Release|Any CPU
+		{982397D0-7DA2-459F-B4F2-C0F4F64AADF4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2406,6 +2420,7 @@ Global
 		{84F51960-D814-450D-80EB-D9E46A1D5187} = {72E7FA64-5B1E-477D-BD30-63B7F206B3C4}
 		{D3D9891B-88E6-46AD-919C-7EC4EABE5266} = {72E7FA64-5B1E-477D-BD30-63B7F206B3C4}
 		{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85} = {CF69D5C3-4ACE-4458-BA5A-0E9A3B294CDC}
+		{982397D0-7DA2-459F-B4F2-C0F4F64AADF4} = {E1F91563-7277-4E9B-A3B7-8D5FD9802A4A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5273D7F-3334-48DF-94E3-41AE6816CD4D}
