@@ -1,2 +1,0 @@
-# Cache the latest build so that we don't have to go through that Gradle nonsense every time
-!*.aar

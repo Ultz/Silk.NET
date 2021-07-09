@@ -1,0 +1,36 @@
+<!--suppress CheckTagEmptyBody -->
+<Project>
+    <PropertyGroup>
+        <PackageIcon>logo.png</PackageIcon>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <LangVersion>preview</LangVersion>
+        <Authors>.NET Foundation and Contributors</Authors>
+        <PackageReleaseNotes>
+            Complete rewrite
+        </PackageReleaseNotes>
+        <PackageTags Condition="'$(PackageTags)' == ''">OpenCL;OpenGL;OpenAL;OpenGLES;GLES;Vulkan;Assimp;DirectX;GLFW;SDL;Windowing;Input;Gamepad;Joystick;Keyboard;Mouse;SilkTouch;Source;Generator;C#;F#;.NET;DotNet;Mono;Vector;Math;Maths;Numerics;Game;Graphics;Compute;Audio;Sound;Engine;Silk;Silk.NET;Slim.NET;ElgarTK;GPU;Sharp;Science;Scientific;Visualization;Visual;Audiovisual;Windows;macOS;Linux;Android;Bindings;OSX;Wrapper;Native</PackageTags>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <PackageOutputPath>$(MSBuildThisFileDirectory)/../output_packages</PackageOutputPath>
+        <RepositoryUrl>https://github.com/dotnet/Silk.NET</RepositoryUrl>
+        <RepositoryType>Git</RepositoryType>
+        <VersionPrefix>3.0.0</VersionPrefix>
+        <VersionSuffix Condition="'$(VersionSuffix)' == ''">preview</VersionSuffix>
+        <Description Condition="'$(Description)' == ''">
+            Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, and DirectX.
+        </Description>
+    </PropertyGroup>
+    <!-- SourceLink -->
+    <PropertyGroup Condition="'$(SilkEnableSourceLink)' != 'false' And '$(SilkSourceLinkExempt)' == ''">
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+    <ItemGroup Condition="'$(SilkEnableSourceLink)' != 'false' And '$(SilkSourceLinkExempt)' == ''">
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
+    </ItemGroup>
+    <PropertyGroup Condition="'$(SilkSourceLinkExempt)' != ''">
+        <IncludeSymbols>false</IncludeSymbols>
+        <SymbolPackageFormat></SymbolPackageFormat>
+    </PropertyGroup>
+</Project>

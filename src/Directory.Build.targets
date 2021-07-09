@@ -1,0 +1,23 @@
+<Project>
+    <ItemGroup>
+        <Content Include="$(MSBuildThisFileDirectory)..\documentation\branding\logo.png"
+                 Link="logo.png"
+                 Pack="true"
+                 PackagePath="\"
+                 Visible="false">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+    <Target
+        Name="VS16_RemoveSystemMemory"
+        BeforeTargets="FindReferenceAssembliesForReferences"
+        Condition="'$(MSBuildVersion)' &gt;= '16.0'">
+        <ItemGroup>
+            <_ReferencePathToRemove
+                Include="@(ReferencePath)"
+                Condition="'%(ReferencePath.NuGetPackageId)'=='System.Memory'" />
+            <ReferencePath Remove="@(_ReferencePathToRemove)" />
+        </ItemGroup>
+        <Message Text="Removing System.Memory for VS 2019 compatibility" Importance="high"/>
+    </Target>
+</Project>

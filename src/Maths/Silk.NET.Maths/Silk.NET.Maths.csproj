@@ -28,6 +28,4 @@
         <AdditionalFiles Include="PublicAPI.Shipped.txt" />
         <AdditionalFiles Include="PublicAPI.Unshipped.txt" />
     </ItemGroup>
-
-	<Import Project="..\..\..\build\props\common.props" />
 </Project>

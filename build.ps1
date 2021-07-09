@@ -13,7 +13,7 @@ $PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Parent
 # CONFIGURATION
 ###########################################################################
 
-$BuildProjectFile = "$PSScriptRoot\build\nuke\Silk.NET.NUKE.csproj"
+$BuildProjectFile = "$PSScriptRoot\src\Meta\Silk.NET.NUKE\Silk.NET.NUKE.csproj"
 $TempDirectory = "$PSScriptRoot\\.tmp"
 
 $DotNetGlobalFile = "$PSScriptRoot\\global.json"

@@ -4,8 +4,6 @@
     <SilkSourceLinkExempt>true</SilkSourceLinkExempt>
   </PropertyGroup>
 
-  <Import Project="..\..\..\build\props\common.props" />
-
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net4.6.1</TargetFrameworks>
     <PackageVersion>1.21.1.1</PackageVersion>

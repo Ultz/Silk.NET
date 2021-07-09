@@ -1,6 +1,0 @@
-[submodule "build/submodules/SDL"]
-	path = build/submodules/SDL
-	url = https://github.com/libsdl-org/SDL
-[submodule "build/submodules/Vulkan-Headers"]
-	path = build/submodules/Vulkan-Headers
-	url = https://github.com/KhronosGroup/Vulkan-Headers
