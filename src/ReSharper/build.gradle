@@ -1,0 +1,204 @@
+// Reference https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system/gradle_guide.html
+import org.apache.tools.ant.taskdefs.condition.Os
+
+buildscript {
+    repositories {
+        maven { url 'https://www.myget.org/F/rd-snapshots/maven/' }
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("com.jetbrains.rd:rd-gen:0.211.243") // https://www.myget.org/feed/rd-snapshots/package/maven/com.jetbrains.rd/rd-gen
+    }
+}
+
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm' version '1.3.61'
+    id 'org.jetbrains.intellij' version '0.7.3' // https://github.com/JetBrains/gradle-intellij-plugin/releases
+}
+
+ext {
+    isWindows = Os.isFamily(Os.FAMILY_WINDOWS)
+    rdLibDirectory = {
+        new File(intellij.ideaDependency.classes, "lib/rd")
+    }
+}
+
+repositories {
+    maven { url 'https://cache-redirector.jetbrains.com/intellij-repository/snapshots' }
+    maven { url 'https://cache-redirector.jetbrains.com/maven-central' }
+}
+
+wrapper {
+    gradleVersion = '6.1.1'
+    distributionType = Wrapper.DistributionType.ALL
+    distributionUrl = "https://cache-redirector.jetbrains.com/services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
+}
+
+version = ext.PluginVersion
+
+sourceSets {
+    main {
+        java.srcDir 'src/rider/main/kotlin'
+        resources.srcDir 'src/rider/main/resources'
+    }
+}
+
+compileKotlin {
+    kotlinOptions { jvmTarget = "1.8" }
+}
+
+task setBuildTool {
+    doLast {
+        ext.args = []
+        ByteArrayOutputStream stdout = new ByteArrayOutputStream()
+        if (isWindows) {
+            exec {
+                executable "${rootDir}\\tools\\vswhere.exe"
+                args '-latest','-property','installationPath','-products','*'
+                standardOutput = stdout
+                workingDir rootDir
+            }
+            List<String> files = new FileNameFinder().getFileNames("${stdout.toString().trim()}\\MSBuild", "**/MSBuild.exe")
+            ext.executable = files.get(0)
+            ext.args << "/v:minimal"
+        } else {
+            ext.executable = "dotnet"
+            ext.args << "msbuild"
+        }
+        ext.args << "${DotnetSolution}"
+        ext.args << "/p:Configuration=${BuildConfiguration}"
+        ext.args << "/p:HostFullIdentifier="
+    }
+}
+
+task compileDotNet {
+    dependsOn setBuildTool
+    doLast {
+        def arguments = setBuildTool.args.clone()
+        arguments << "/t:Restore;Rebuild"
+        exec {
+            executable setBuildTool.executable
+            args arguments
+            workingDir rootDir
+        }
+    }
+}
+
+buildPlugin {
+    doLast {
+        copy {
+            from "${buildDir}/distributions/${rootProject.name}-${version}.zip"
+            into "${rootDir}/output"
+        }
+
+        def changelogText = file("${rootDir}/CHANGELOG.md").text
+        def changelogMatches = changelogText =~ /(?s)(-.+?)(?=##|$)/
+        def changeNotes = changelogMatches.collect {
+            it[1].replaceAll(/(?s)- /, "\u2022 ").replaceAll(/`/, "").replaceAll(/,/, "%2C").replaceAll(/;/, "%3B")
+        }.take(1).join("")
+
+        def arguments = setBuildTool.args.clone()
+        arguments << "/t:Pack"
+        arguments << "/p:PackageOutputPath=${rootDir}/output"
+        arguments << "/p:PackageReleaseNotes=${changeNotes}"
+        arguments << "/p:PackageVersion=${version}"
+        exec {
+            executable setBuildTool.executable
+            args arguments
+            workingDir rootDir
+        }
+    }
+}
+
+intellij {
+    type = 'RD'
+    version = "${ProductVersion}"
+    downloadSources = false
+    instrumentCode = false
+    // TODO: add plugins
+    // plugins("uml", "com.jetbrains.ChooseRuntime:1.0.9")
+}
+
+runIde {
+    // TODO: adapt runtime if necessary
+    // jbrVersion("jbr_jcef-11_0_6b765.40") // https://confluence.jetbrains.com/display/JBR/Release+notes
+}
+
+apply plugin: 'com.jetbrains.rdgen'
+
+rdgen {
+    def modelDir = new File(rootDir, "protocol/src/main/kotlin/model")
+    def csOutput = new File(rootDir, "src/dotnet/${DotnetPluginId}/Rider")
+    def ktOutput = new File(rootDir, "src/rider/main/kotlin/com/jetbrains/rider/plugins/${RiderPluginId.replace('.','/').toLowerCase()}")
+
+    verbose = true
+    classpath {
+        "${rdLibDirectory()}/rider-model.jar"
+    }
+    sources "${modelDir}/rider"
+    hashFolder = "${buildDir}"
+    packages = "model.rider"
+
+    generator {
+        language = "kotlin"
+        transform = "asis"
+        root = "com.jetbrains.rider.model.nova.ide.IdeRoot"
+        namespace = "com.jetbrains.rider.model"
+        directory = "$ktOutput"
+    }
+
+    generator {
+        language = "csharp"
+        transform = "reversed"
+        root = "com.jetbrains.rider.model.nova.ide.IdeRoot"
+        namespace = "JetBrains.Rider.Model"
+        directory = "$csOutput"
+    }
+}
+
+patchPluginXml {
+    def changelogText = file("${rootDir}/CHANGELOG.md").text
+    def changelogMatches = changelogText =~ /(?s)(-.+?)(?=##|$)/
+
+    changeNotes = changelogMatches.collect {
+        it[1].replaceAll(/(?s)\r?\n/, "<br />\n")
+    }.take(1).join('')
+}
+
+prepareSandbox {
+    dependsOn compileDotNet
+
+    def outputFolder = "${rootDir}/src/dotnet/${DotnetPluginId}/bin/${DotnetPluginId}.Rider/${BuildConfiguration}"
+    def dllFiles = [
+            "$outputFolder/${DotnetPluginId}.dll",
+            "$outputFolder/${DotnetPluginId}.pdb",
+            // TODO: add additional assemblies
+    ]
+
+    dllFiles.forEach({ f ->
+        def file = file(f)
+        from(file, { into "${intellij.pluginName}/dotnet" })
+    })
+
+    doLast {
+        dllFiles.forEach({ f ->
+            def file = file(f)
+            if (!file.exists()) throw new RuntimeException("File ${file} does not exist")
+        })
+    }
+}
+
+publishPlugin {
+    dependsOn buildPlugin
+    token = "${PublishToken}"
+
+    doLast {
+        exec {
+            executable "dotnet"
+            args "nuget","push","output/${DotnetPluginId}.${version}.nupkg","--api-key",token,"--source","https://plugins.jetbrains.com"
+            workingDir rootDir
+        }
+    }
+}

@@ -1,0 +1,22 @@
+<idea-plugin require-restart="true">
+  <id>silkdotnet-rider</id>
+  <name>SilkDotNet</name>
+  <version>_PLACEHOLDER_</version>
+  <vendor url="https://project-url">Author</vendor>
+  <idea-version since-build="_PLACEHOLDER_" until-build="_PLACEHOLDER_" />
+  <depends>com.intellij.modules.rider</depends>
+
+
+  <actions>
+    <action id="SilkNetOpenDocumentationAction" class="com.jetbrains.rider.plugins.silknet.actions.SilkNetOpenDocumentationAction"
+            text="Open Documentation" description="Open Online Documentation">
+    </action>
+  </actions>
+
+  <description>
+<![CDATA[
+<p>Sample description</p>
+]]>
+  </description>
+
+</idea-plugin>

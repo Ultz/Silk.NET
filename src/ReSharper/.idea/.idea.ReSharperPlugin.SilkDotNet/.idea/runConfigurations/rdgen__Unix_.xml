@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Generate protocol (Unix)" type="RunNativeExe" factoryName="Native Executable" singleton="true">
+    <option name="EXE_PATH" value="$PROJECT_DIR$/gradlew" />
+    <option name="PROGRAM_PARAMETERS" value=":rdgen" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <option name="PASS_PARENT_ENVS" value="1" />
+    <option name="USE_MONO" value="0" />
+    <option name="RUNTIME_ARGUMENTS" value="" />
+  </configuration>
+</component>

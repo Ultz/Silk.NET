@@ -1,0 +1,18 @@
+﻿<Project>
+
+  <PropertyGroup>
+    <SdkVersion>2021.1.2</SdkVersion>
+
+    <Title>SilkDotNet</Title>
+    <Description>Description</Description>
+
+    <Authors>Author</Authors>
+    <Copyright>Copyright $([System.DateTime]::Now.Year) Maintainers of SilkDotNet</Copyright>
+    <PackageTags>resharper plugin</PackageTags>
+
+    <PackageProjectUrl></PackageProjectUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageIconUrl></PackageIconUrl>
+  </PropertyGroup>
+
+</Project>

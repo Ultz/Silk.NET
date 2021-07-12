@@ -1,0 +1,49 @@
+﻿<Project>
+
+  <PropertyGroup>
+    <LanguageTargets>$(MSBuildToolsPath)\Microsoft.CSharp.targets</LanguageTargets>
+  </PropertyGroup>
+
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
+
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+    <AssemblyName>ReSharperPlugin.SilkDotNet</AssemblyName>
+    <RootNamespace>$(AssemblyName)</RootNamespace>
+    <IsPackable>false</IsPackable>
+    <DefineConstants>$(DefineConstants);RIDER</DefineConstants>
+  </PropertyGroup>
+
+<!--    <Import Project="/Users/matt/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.rider/riderRD/2021.2-SNAPSHOT/cc0b8a11b33426591515d25202291671ecc7ae82/riderRD-2021.2-SNAPSHOT/lib/DotNetSdkForRdPlugins/Build/SubplatformReference.ReSharperAutomationTools_src_ReSharperHost.Props" />-->
+  <ItemGroup>
+<!--    <PackageReference Include="JetBrains.Rider.SDK" Version="212.*-*" />-->
+    <PackageReference Include="JetBrains.Rider.SDK" Version="2021.1.2" />
+  </ItemGroup>
+
+  <!-- TODO: uncomment for xaml icons -->
+  <!--<ItemGroup>-->
+    <!--<Reference Include="System.Xaml" />-->
+    <!--<Reference Include="WindowsBase" />-->
+  <!--</ItemGroup>-->
+
+  <!--<ItemGroup>-->
+    <!--<Reference Include="PresentationCore" />-->
+    <!--<Reference Include="PresentationFramework" />-->
+
+    <!--<ThemedIconsXamlV3 Include="**\*-color.xaml">-->
+      <!--<ThemeColumns>Color</ThemeColumns>-->
+      <!--<RemoveBackgroundElement>True</RemoveBackgroundElement>-->
+      <!--<SubType>Designer</SubType>-->
+      <!--<Generator>MSBuild:Compile</Generator>-->
+    <!--</ThemedIconsXamlV3>-->
+    <!--<ThemedIconsXamlV3 Include="**\*-graydark.xaml">-->
+      <!--<ThemeColumns>GrayDark</ThemeColumns>-->
+      <!--<RemoveBackgroundElement>True</RemoveBackgroundElement>-->
+      <!--<SubType>Designer</SubType>-->
+      <!--<Generator>MSBuild:Compile</Generator>-->
+    <!--</ThemedIconsXamlV3>-->
+  <!--</ItemGroup>-->
+
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
+
+</Project>

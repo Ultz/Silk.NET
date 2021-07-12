@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Silk.NET.OpenGL" Version="2.4.0" />
+        <PackageReference Include="Silk.NET.Windowing" Version="2.4.0" />
+        <PackageReference Include="Silk.NET.Input" Version="2.4.0" />
+    </ItemGroup>
+
+</Project>

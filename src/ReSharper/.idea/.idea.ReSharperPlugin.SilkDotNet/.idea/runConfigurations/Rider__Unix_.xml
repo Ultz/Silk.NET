@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Rider (Unix)" type="RunNativeExe" factoryName="Native Executable" singleton="true">
+    <option name="EXE_PATH" value="$PROJECT_DIR$/gradlew" />
+    <option name="PROGRAM_PARAMETERS" value=":runIde -x compileKotlin -x compileDotNet" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <option name="PASS_PARENT_ENVS" value="1" />
+    <envs>
+      <env name="RESHARPER_HOST_DEBUG_SELF" value="1" />
+      <env name="RUNNING_FROM_RIDER" value="1" />
+    </envs>
+    <option name="USE_EXTERNAL_CONSOLE" value="0" />
+    <method v="2">
+      <option name="Build Solution" enabled="true" />
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Rider – Frontend (Unix)" run_configuration_type="RunNativeExe" />
+    </method>
+  </configuration>
+</component>

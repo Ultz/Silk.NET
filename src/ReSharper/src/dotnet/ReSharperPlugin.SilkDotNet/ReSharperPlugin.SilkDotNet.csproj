@@ -1,0 +1,58 @@
+﻿<Project>
+
+  <PropertyGroup>
+    <LanguageTargets>$(MSBuildToolsPath)\Microsoft.CSharp.targets</LanguageTargets>
+  </PropertyGroup>
+
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
+
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+    <IsPackable>True</IsPackable>
+    <DefineConstants>$(DefineConstants);RESHARPER</DefineConstants>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <LangVersion>9</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JetBrains.ReSharper.SDK" Version="$(SdkVersion)" PrivateAssets="all" />
+    <!-- TODO: https://github.com/NuGet/Home/issues/7154 -->
+    <PackageReference Include="Wave" Version="[$(WaveVersion),$(UpperWaveVersion))" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Content Include="bin\$(AssemblyName)\$(Configuration)\$(AssemblyName).dll" PackagePath="dotFiles" Pack="true" />
+    <Content Include="bin\$(AssemblyName)\$(Configuration)\$(AssemblyName).pdb" PackagePath="dotFiles" Pack="true" />
+
+    <!-- TODO: add additional assemblies -->
+  </ItemGroup>
+
+  <!-- WARNING: ReSharper plugins with icons must be compiled using PowerShell scripts -->
+  <!-- TODO: uncomment for xaml icons -->
+  <!--<ItemGroup>-->
+    <!--<Reference Include="System.Xaml" />-->
+    <!--<Reference Include="WindowsBase" />-->
+  <!--</ItemGroup>-->
+
+  <!--<ItemGroup>-->
+    <!--<Reference Include="PresentationCore" />-->
+    <!--<Reference Include="PresentationFramework" />-->
+
+    <!--<ThemedIconsXamlV3 Include="**\*-color.xaml">-->
+      <!--<ThemeColumns>Color</ThemeColumns>-->
+      <!--<RemoveBackgroundElement>True</RemoveBackgroundElement>-->
+      <!--<SubType>Designer</SubType>-->
+      <!--<Generator>MSBuild:Compile</Generator>-->
+    <!--</ThemedIconsXamlV3>-->
+    <!--<ThemedIconsXamlV3 Include="**\*-graydark.xaml">-->
+      <!--<ThemeColumns>GrayDark</ThemeColumns>-->
+      <!--<RemoveBackgroundElement>True</RemoveBackgroundElement>-->
+      <!--<SubType>Designer</SubType>-->
+      <!--<Generator>MSBuild:Compile</Generator>-->
+    <!--</ThemedIconsXamlV3>-->
+  <!--</ItemGroup>-->
+
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
+
+</Project>
